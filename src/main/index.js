@@ -18,9 +18,6 @@ const winURL = process.env.NODE_ENV === 'development'
   : `file://${__dirname}/index.html`
 
 function createWindow () {
-  /**
-   * Initial window options
-   */
   mainWindow = new BrowserWindow({
     height: 600, // 高
     width: 900, // 宽
@@ -56,13 +53,13 @@ function createContextMenu () {
       label: '关于',
       click () {
         dialog.showMessageBox({
-          message: '消息',
-          detail: '描述'
+          message: '计算机系统内容管理',
+          detail: '技术栈：electron-vue\n作者: Nick\nGithub:https://github.com/nick233333/computer-info`'
         })
       }
     },
     {
-      label: '重启应用',
+      label: '重启',
       click () {
         app.relaunch()
         app.exit(0)
@@ -76,16 +73,33 @@ function createContextMenu () {
 }
 
 function createTray () {
+  if (tray) {
+    return false
+  }
   const menubarPic = process.platform === 'darwin' ? `${__static}/logo-darwin.png` : `${__static}/logo-win32.png`
   tray = new Tray(menubarPic)
   tray.on('right-click', () => {
+    mainWindow.hide()
     contextMenu = createContextMenu()
     tray.popUpContextMenu(contextMenu)
   })
   tray.on('click', () => {
-    mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show()
+    if (mainWindow) {
+      mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show()
+    }
   })
 }
+
+const shouldQuit = app.makeSingleInstance((commandLine, workingDir) => {
+  if (mainWindow) {
+    mainWindow.isMinimized() && mainWindow.restore()
+    mainWindow.focus()
+  }
+})
+if (shouldQuit) {
+  app.quit()
+}
+
 app.on('ready', createWindow)
 
 app.on('window-all-closed', () => {

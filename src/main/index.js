@@ -1,6 +1,6 @@
 'use strict'
 
-import { app, BrowserWindow } from 'electron'
+import { app, BrowserWindow, Tray } from 'electron'
 
 /**
  * Set `__static` path to static files in production
@@ -11,6 +11,7 @@ if (process.env.NODE_ENV !== 'development') {
 }
 
 let mainWindow
+let tray
 const winURL = process.env.NODE_ENV === 'development'
   ? `http://localhost:9080`
   : `file://${__dirname}/index.html`
@@ -42,8 +43,20 @@ function createWindow () {
   mainWindow.on('closed', () => {
     mainWindow = null
   })
+  if (process.platform === 'darwin' || process.platform === 'win32') {
+    createTray()
+  }
 }
-
+function createTray () {
+  const menubarPic = process.platform === 'darwin' ? `${__static}/favicon.png` : `${__static}/favicon.png`
+  tray = new Tray(menubarPic)
+  tray.on('right-click', () => {
+    mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show()
+  })
+  tray.on('click', () => {
+    mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show()
+  })
+}
 app.on('ready', createWindow)
 
 app.on('window-all-closed', () => {

@@ -1,6 +1,6 @@
 'use strict'
 
-import { app, BrowserWindow, Tray, dialog } from 'electron'
+import { app, BrowserWindow, Tray, dialog, Menu } from 'electron'
 
 /**
  * Set `__static` path to static files in production
@@ -12,6 +12,7 @@ if (process.env.NODE_ENV !== 'development') {
 
 let mainWindow
 let tray
+let contextMenu
 const winURL = process.env.NODE_ENV === 'development'
   ? `http://localhost:9080`
   : `file://${__dirname}/index.html`
@@ -47,14 +48,38 @@ function createWindow () {
     createTray()
   }
 }
+
+function createContextMenu () {
+  return Menu.buildFromTemplate([
+    {
+      label: '关于',
+      click () {
+        dialog.showMessageBox({
+          message: '消息',
+          detail: '描述'
+        })
+      }
+    },
+    {
+      label: '重启应用',
+      click () {
+        app.relaunch()
+        app.exit(0)
+      }
+    },
+    {
+      role: 'quit',
+      label: '退出'
+    }
+  ])
+}
+
 function createTray () {
   const menubarPic = process.platform === 'darwin' ? `${__static}/favicon.png` : `${__static}/favicon.png`
   tray = new Tray(menubarPic)
   tray.on('right-click', () => {
-    dialog.showMessageBox({
-      message: '提示语',
-      detail: '描述'
-    })
+    contextMenu = createContextMenu()
+    tray.popUpContextMenu(contextMenu)
   })
   tray.on('click', () => {
     mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show()

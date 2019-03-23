@@ -54,7 +54,7 @@ function createContextMenu () {
       click () {
         dialog.showMessageBox({
           message: '计算机系统内容管理',
-          detail: '技术栈：electron-vue\n作者: Nick\nGithub:https://github.com/nick233333/computer-info`'
+          detail: '技术栈：electron-vue\n作者: Nick\nGithub:https://github.com/nick233333/computer-info'
         })
       }
     },
@@ -79,7 +79,9 @@ function createTray () {
   const menubarPic = process.platform === 'darwin' ? `${__static}/logo-darwin.png` : `${__static}/logo-win32.png`
   tray = new Tray(menubarPic)
   tray.on('right-click', () => {
-    mainWindow.hide()
+    if (mainWindow) {
+      mainWindow.hide()
+    }
     contextMenu = createContextMenu()
     tray.popUpContextMenu(contextMenu)
   })

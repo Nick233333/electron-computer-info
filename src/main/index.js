@@ -1,6 +1,6 @@
 'use strict'
 
-import { app, BrowserWindow, Tray } from 'electron'
+import { app, BrowserWindow, Tray, dialog } from 'electron'
 
 /**
  * Set `__static` path to static files in production
@@ -51,7 +51,10 @@ function createTray () {
   const menubarPic = process.platform === 'darwin' ? `${__static}/favicon.png` : `${__static}/favicon.png`
   tray = new Tray(menubarPic)
   tray.on('right-click', () => {
-    mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show()
+    dialog.showMessageBox({
+      message: '提示语',
+      detail: '描述'
+    })
   })
   tray.on('click', () => {
     mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show()

@@ -1,9 +1,14 @@
 <template>
-  <div>hello world</div>
+  <div @click="openURL">hello world</div>
 </template>
 
 <script>
 export default {
-  name: 'hello-world'
+  name: 'hello-world',
+  methods: {
+    openURL () {
+      this.$electron.remote.shell.openExternal('https://github.com/nick233333')
+    }
+  }
 }
 </script>

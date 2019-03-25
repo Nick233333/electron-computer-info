@@ -1,19 +1,12 @@
 <template>
   <div>
-    <hello-world></hello-world>
-    <iframe :src="url" class="iframe"></iframe>
+    <router-link :to="{path: '/detail'}" tag="a">aa</router-link>
+    <hello-world @click.native="go"></hello-world>
   </div>
 </template>
 
 <style>
-body {
-  margin: 0;
-}
-.iframe {
-  height: 100vh;
-  width: 100vw;
-  border: none;
-}
+
 </style>
 
 <script>
@@ -24,8 +17,11 @@ export default {
     HelloWorld
   },
   data () {
-    return {
-      url: 'https://koa2.hellocode.name/'
+    return {}
+  },
+  methods: {
+    go () {
+      this.router.push('/detail')
     }
   }
 }

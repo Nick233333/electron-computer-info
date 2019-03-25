@@ -15,6 +15,7 @@ import store from './store'
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 Vue.http = Vue.prototype.$http = axios
 Vue.config.productionTip = false
+Vue.prototype.router = router
 
 /* eslint-disable no-new */
 new Vue({

@@ -4,6 +4,8 @@ import axios from 'axios'
 import App from './App'
 import router from './router'
 import store from './store'
+import { Button } from 'element-ui'
+Vue.use(Button)
 
 // import * as config from './config/index'
 // import api from './api/index'

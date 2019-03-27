@@ -3,11 +3,14 @@
 </template>
 
 <script>
+const os = require('os')
+
 export default {
   name: 'hello-world',
   methods: {
     openURL () {
-      this.$electron.remote.shell.openExternal('https://github.com/nick233333')
+      this.$electron.remote.shell.beep()
+      this.$electron.remote.shell.showItemInFolder(`${os.homedir()}/www/`)
     }
   }
 }

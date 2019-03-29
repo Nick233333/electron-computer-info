@@ -7,12 +7,14 @@
 </template>
 
 <script>
-  export default {
-    name: 'computer-info'
-  }
+export default {
+  name: 'computer-info'
+}
 </script>
 
-<style>
+<style lang="scss">
+@import '@/styles/style.scss';
+
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s;
 }

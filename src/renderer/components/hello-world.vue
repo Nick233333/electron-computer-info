@@ -10,7 +10,8 @@ export default {
   methods: {
     openURL () {
       this.$electron.remote.shell.beep()
-      this.$electron.remote.shell.showItemInFolder(`${os.homedir()}/www/`)
+      // this.$electron.remote.shell.showItemInFolder(`${os.homedir()}/www/`)
+      this.$electron.remote.shell.openItem(`${os.homedir()}/www/hellocode.name/favicon.png`)
     }
   }
 }

@@ -23,7 +23,7 @@ function createWindow () {
     width: 900, // 宽
     title: 'title',
     show: true, // 创建后是否显示
-    frame: true, // 是否创建frameless窗口
+    frame: false, // 是否创建frameless窗口
     fullscreenable: true, // 是否允许全屏
     fullscreen: false,
     center: true, // 是否出现在屏幕居中的位置

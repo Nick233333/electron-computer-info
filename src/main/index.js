@@ -21,13 +21,13 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     height: 600, // 高
     width: 900, // 宽
-    title: 'title',
+    title: 'FileSystem',
     show: true, // 创建后是否显示
     frame: false, // 是否创建frameless窗口
     fullscreenable: true, // 是否允许全屏
     fullscreen: false,
     center: true, // 是否出现在屏幕居中的位置
-    backgroundColor: '#fff', // 背景色，用于transparent和frameless窗口
+    backgroundColor: '#EBEEF5', // 背景色，用于transparent和frameless窗口
     titleBarStyle: 'hidden', // 标题栏的样式，有hidden、hiddenInset、customButtonsOnHover等
     resizable: true, // 是否允许拉伸大小
     transparent: true, // 是否是透明窗口（仅macOS）
@@ -53,7 +53,7 @@ function createContextMenu () {
       label: '关于',
       click () {
         dialog.showMessageBox({
-          message: '计算机系统内容管理',
+          message: '文件系统',
           detail: '技术栈：electron-vue\n作者: Nick\nGithub:https://github.com/nick233333/computer-info'
         })
       }

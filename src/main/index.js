@@ -28,9 +28,9 @@ function createWindow () {
     fullscreen: false,
     center: true, // 是否出现在屏幕居中的位置
     backgroundColor: '#fff', // 背景色，用于transparent和frameless窗口
-    titleBarStyle: '#f90', // 标题栏的样式，有hidden、hiddenInset、customButtonsOnHover等
+    titleBarStyle: 'hidden', // 标题栏的样式，有hidden、hiddenInset、customButtonsOnHover等
     resizable: true, // 是否允许拉伸大小
-    transparent: false, // 是否是透明窗口（仅macOS）
+    transparent: true, // 是否是透明窗口（仅macOS）
     vibrancy: 'ultra-dark', // 窗口模糊的样式（仅macOS）
     webPreferences: {
       backgroundThrottling: false // 当页面被置于非激活窗口的时候是否停止动画和计时器

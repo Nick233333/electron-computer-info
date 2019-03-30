@@ -53,7 +53,7 @@ function createContextMenu () {
       label: '关于',
       click () {
         dialog.showMessageBox({
-          message: '文件系统',
+          message: 'FileSystem',
           detail: '技术栈：electron-vue\n作者: Nick\nGithub:https://github.com/nick233333/computer-info'
         })
       }
@@ -114,4 +114,5 @@ app.on('activate', () => {
   if (mainWindow === null) {
     createWindow()
   }
+  mainWindow.show()
 })

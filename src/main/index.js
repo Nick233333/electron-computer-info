@@ -27,7 +27,7 @@ function createWindow () {
     fullscreenable: true, // 是否允许全屏
     fullscreen: false,
     center: true, // 是否出现在屏幕居中的位置
-    backgroundColor: '#545c64', // 背景色，用于transparent和frameless窗口
+    backgroundColor: 'transparent', // 背景色，用于transparent和frameless窗口
     titleBarStyle: 'hidden', // 标题栏的样式，有hidden、hiddenInset、customButtonsOnHover等
     resizable: true, // 是否允许拉伸大小
     transparent: true, // 是否是透明窗口（仅macOS）

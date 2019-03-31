@@ -9,33 +9,6 @@ body {
   user-select: none;
   margin: 15px 0 0 0;
 }
-
-.handle-bar {
-  position: absolute;
-  top: 5px;
-  right: 8px;
-  width: 80px;
-  z-index: 10000;
-  -webkit-app-region: no-drag;
-}
-i {
-  cursor: pointer;
-  font-size: 22px;
-}
-.el-icon-minus {
-  color: #409EFF;
-}
-.el-icon-close {
-  color: #F15140;
-}
-.el-icon-circle-plus-outline {
-  padding-left: 3px;
-  padding-right: 3px;
-  color: #69C282;
-}
-.el-menu {
-  border: none;
-}
-.el-menu-item:hover {
-  color: #409EFF !important;
+.mt-15 {
+  margin-top: -15px;
 }

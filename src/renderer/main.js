@@ -4,7 +4,19 @@ import axios from 'axios'
 import App from './App'
 import router from './router'
 import store from './store'
-import { Button, Row, Col, Menu, MenuItem, MenuItemGroup, Submenu, Breadcrumb, BreadcrumbItem } from 'element-ui'
+
+import {
+  Button,
+  Row,
+  Col,
+  Menu,
+  MenuItem,
+  MenuItemGroup,
+  Submenu,
+  Breadcrumb,
+  BreadcrumbItem
+} from 'element-ui'
+
 Vue.use(Button)
 Vue.use(Row)
 Vue.use(Col)

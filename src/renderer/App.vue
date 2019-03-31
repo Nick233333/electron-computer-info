@@ -1,24 +1,11 @@
 <template>
   <div id="app">
-    <transition name="fade" mode="out-in">
+    <keep-alive>
       <router-view></router-view>
-    </transition>
+    </keep-alive>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'computer-info'
-}
-</script>
-
 <style lang="scss">
 @import '@/styles/style.scss';
-
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .3s;
-}
-.fade-enter, .fade-leave-to {
-  opacity: 0;
-}
 </style>

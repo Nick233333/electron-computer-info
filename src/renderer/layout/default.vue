@@ -36,8 +36,8 @@
       </el-col>
       <el-col :span="18" class="main-container">
         <el-breadcrumb separator="/" class="breadcrumb">
-        <el-breadcrumb-item :to="{ path: '/all' }">首页</el-breadcrumb-item>
-        <el-breadcrumb-item :to="{ path: '/detail' }">详情</el-breadcrumb-item>
+          <el-breadcrumb-item :to="{ path: '/all' }">首页</el-breadcrumb-item>
+          <el-breadcrumb-item :to="{ path: '/detail' }">详情</el-breadcrumb-item>
         </el-breadcrumb>
         <transition name="fade" mode="out-in">
           <router-view></router-view>

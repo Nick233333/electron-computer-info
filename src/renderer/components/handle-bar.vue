@@ -1,8 +1,8 @@
 <template>
   <div class="handle-bar" v-if="os === 'win32'">
-    <i class="el-icon-minus" @click="minimizeWindow"></i>
-    <i class="el-icon-circle-plus-outline" @click="maximizeWindow"></i>
-    <i class="el-icon-close" @click="closeWindow"></i>
+    <i title="最小化" class="el-icon-minus" @click="minimizeWindow"></i>
+    <i title="最大化" class="el-icon-circle-plus-outline" @click="maximizeWindow"></i>
+    <i title="关闭" class="el-icon-close" @click="closeWindow"></i>
   </div>
 </template>
 

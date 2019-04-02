@@ -6,18 +6,30 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'index',
-      component: require('@/views/index').default
+      path: '/my',
+      name: 'all',
+      component: require('@/layout/default').default,
+      children: [
+        {
+          path: '/all',
+          component: require('@/views/index').default
+        }
+      ]
     },
     {
-      path: '/detail',
+      path: '/info',
       name: 'detail',
-      component: require('@/views/detail').default
+      component: require('@/layout/default').default,
+      children: [
+        {
+          path: '/detail',
+          component: require('@/views/detail').default
+        }
+      ]
     },
     {
       path: '*',
-      redirect: '/'
+      redirect: '/my'
     }
   ]
 })

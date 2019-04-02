@@ -2,7 +2,7 @@
   <el-col :span="6">
     <el-menu
       class="main-menu"
-      default-active="/"
+      :default-active="$route.path"
       background-color="#545c64"
       text-color="#fff"
       unique-opened
@@ -13,7 +13,7 @@
           <span>我的</span>
         </template>
         <el-menu-item-group>
-          <el-menu-item index="1-1">所有文件</el-menu-item>
+          <el-menu-item index="/my/all">所有文件</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
       <el-submenu index="2">
@@ -22,7 +22,7 @@
           <span>信息</span>
         </template>
         <el-menu-item-group>
-          <el-menu-item index="2-1">配置</el-menu-item>
+          <el-menu-item index="/info/detail">配置</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
     </el-menu>

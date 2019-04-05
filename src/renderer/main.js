@@ -16,7 +16,9 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   Card,
-  Progress
+  Progress,
+  Table,
+  TableColumn
 } from 'element-ui'
 
 Vue.use(Button)
@@ -30,6 +32,8 @@ Vue.use(Breadcrumb)
 Vue.use(BreadcrumbItem)
 Vue.use(Card)
 Vue.use(Progress)
+Vue.use(Table)
+Vue.use(TableColumn)
 
 // import * as config from './config/index'
 // import api from './api/index'

@@ -1,10 +1,3 @@
-export function test1 () {
-  console.log('test1')
-}
-
-export function test2 () {
-  console.log('test2')
-}
 export function toMem (mem) {
   var G = 0
   var M = 0

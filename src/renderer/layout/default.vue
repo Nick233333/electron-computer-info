@@ -2,7 +2,7 @@
   <div class="mt-15">
     <handle-bar></handle-bar>
     <el-row>
-      <el-col :span="6">
+      <el-col :span="4">
         <el-menu
           class="main-menu"
           :default-active="$route.path"
@@ -34,7 +34,7 @@
           </el-submenu>
         </el-menu>
       </el-col>
-      <el-col :span="18" class="main-container">
+      <el-col :span="20" class="main-container">
         <transition name="fade" mode="out-in">
           <router-view style="padding: 10px;"></router-view>
         </transition>
@@ -45,7 +45,7 @@
 
 <style scoped>
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
+  transition: opacity .2s;
 }
 .fade-enter, .fade-leave-to {
   opacity: 0;

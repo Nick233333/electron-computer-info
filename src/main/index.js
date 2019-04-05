@@ -51,8 +51,8 @@ function createContextMenu () {
       label: '关于',
       click () {
         dialog.showMessageBox({
-          message: 'FileSystem',
-          detail: '技术栈：electron-vue\n作者: Nick\nGithub:https://github.com/nick233333/computer-info'
+          message: 'Electron-Computer-Info',
+          detail: '技术栈：electron-vue\n作者: Nick\nGithub:https://github.com/nick233333/electron-computer-info'
         })
       }
     },

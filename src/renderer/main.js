@@ -14,7 +14,9 @@ import {
   MenuItemGroup,
   Submenu,
   Breadcrumb,
-  BreadcrumbItem
+  BreadcrumbItem,
+  Card,
+  Progress
 } from 'element-ui'
 
 Vue.use(Button)
@@ -26,6 +28,8 @@ Vue.use(MenuItemGroup)
 Vue.use(Submenu)
 Vue.use(Breadcrumb)
 Vue.use(BreadcrumbItem)
+Vue.use(Card)
+Vue.use(Progress)
 
 // import * as config from './config/index'
 // import api from './api/index'

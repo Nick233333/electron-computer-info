@@ -6,6 +6,10 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path: '/',
+      redirect: '/all'
+    },
+    {
       path: '/my',
       name: 'all',
       component: require('@/layout/default').default,

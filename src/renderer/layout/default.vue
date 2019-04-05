@@ -35,12 +35,8 @@
         </el-menu>
       </el-col>
       <el-col :span="18" class="main-container">
-        <el-breadcrumb separator="/" class="breadcrumb">
-          <el-breadcrumb-item :to="{ path: '/all' }">首页</el-breadcrumb-item>
-          <el-breadcrumb-item :to="{ path: '/detail' }">详情</el-breadcrumb-item>
-        </el-breadcrumb>
         <transition name="fade" mode="out-in">
-          <router-view></router-view>
+          <router-view style="padding: 10px;"></router-view>
         </transition>
       </el-col>
     </el-row>
@@ -74,6 +70,7 @@ a {
   margin-top: 20px;
 }
 .main-container {
+  overflow: auto;
   height: 100vh;
   background: #F2F6FC;
 }

@@ -1,9 +1,9 @@
 {
-  "name": "computer-info",
-  "productName": "computer-info",
+  "name": "electron-computer-info",
+  "productName": "electron-computer-info",
   "version": "0.0.1",
   "author": "nick <nick_php@163.com>",
-  "description": "An electron-vue project",
+  "description": "electron-computer-info",
   "license": "MIT",
   "main": "./dist/electron/main.js",
   "scripts": {
